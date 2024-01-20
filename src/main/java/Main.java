@@ -30,7 +30,7 @@ public class Main {
         writeString(listToJson(parseXML(fileNameXML)), "data2.json");
 
         // JSON - Object Employee
-        jsonToList(readString("data1.json"));
+        List<Employee> list = jsonToList(readString("data1.json"));
 
     }
 
