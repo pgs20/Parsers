@@ -4,7 +4,6 @@ import com.opencsv.CSVReader;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.CsvToBeanBuilder;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.w3c.dom.*;
@@ -43,7 +42,7 @@ public class Main {
 
             CsvToBeanBuilder ctbb = new CsvToBeanBuilder<>(csvr);
 
-            listEmployee = ctbb.withMappingStrategy(cpms).build().parse();
+            listEmployee = (List<Employee>) ctbb.withMappingStrategy(cpms).build().parse();
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
